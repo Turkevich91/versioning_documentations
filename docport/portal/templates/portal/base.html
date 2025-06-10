@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentation Portal</title>
+    <link rel="stylesheet" href="{% static 'portal/style.css' %}">
+</head>
+<body>
+<header>
+    <h1>Documentation Portal</h1>
+</header>
+<nav>
+    <ul>
+        <li><a href="#">Version 1</a></li>
+        <li><a href="#">Version 2</a></li>
+    </ul>
+</nav>
+<main>
+    {% block content %}{% endblock %}
+</main>
+<footer>
+    <p>&copy; 2024 Documentation Portal</p>
+</footer>
+</body>
+</html>
