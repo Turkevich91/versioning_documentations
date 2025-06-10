@@ -1,0 +1,17 @@
+{% extends 'portal/base.html' %}
+
+{% block content %}
+<h2>Articles</h2>
+<p><a href="{% url 'article_create' %}">Add Article</a></p>
+<ul>
+    {% for article in articles %}
+    <li>
+        <h3>{{ article.title }}</h3>
+        <p>by {{ article.author }} on {{ article.published_at|date:"Y-m-d H:i" }}</p>
+        <a href="{% url 'article_edit' article.pk %}">Edit</a>
+    </li>
+    {% empty %}
+    <li>No articles yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
