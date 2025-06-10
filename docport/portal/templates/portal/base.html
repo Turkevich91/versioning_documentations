@@ -1,25 +1,31 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Documentation Portal</title>
+    <title>{% block title %}Documentation Portal{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'portal/style.css' %}">
 </head>
 <body>
 <header>
-    <h1>Documentation Portal</h1>
+    {% block logo %}{% include 'portal/snippets/logo.html' %}{% endblock %}
+    {% block user_badge %}{% include 'portal/snippets/user_badge.html' %}{% endblock %}
 </header>
+
 <nav>
-    <ul>
-        <li><a href="#">Version 1</a></li>
-        <li><a href="#">Version 2</a></li>
-    </ul>
+    {% block menu_bar %}{% include 'portal/snippets/menu_bar.html' %}{% endblock %}
 </nav>
+
+<div class="sidebar">
+    {% block sidebar %}{% include 'portal/snippets/sidebar.html' %}{% endblock %}
+</div>
+
 <main>
     {% block content %}{% endblock %}
 </main>
+
 <footer>
-    <p>&copy; 2024 Documentation Portal</p>
+    {% block footer %}{% include 'portal/snippets/footer.html' %}{% endblock %}
 </footer>
 </body>
 </html>
